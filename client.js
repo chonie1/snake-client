@@ -21,7 +21,7 @@ const connect = function() {
     // setTimeout(()=>{conn.write('Move: left')}, 50)
     // setTimeout(()=>conn.write('Move: right'), 50)
     // setTimeout(()=>conn.write('Move: down'), 50)
-  })
+  });
   
 
   //message handling on the server

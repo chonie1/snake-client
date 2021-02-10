@@ -1,9 +1,12 @@
+// Stores the active TCP connection object.
+let connection;
+
 /**
- * Setup User Interface 
+ * Setup User Interface
  * Specifically, so that we can handle user input via stdin
  */
-const setupInput = function() {
-  
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
@@ -13,9 +16,33 @@ const setupInput = function() {
     if (key === '\u0003') {
       process.exit();
     }
-  })
 
-  return stdint;
-}
+    if (key === 'w') {
+      conn.write('Move: up');
+    }
 
-module.exports = {setupInput}
+    if (key === 'a') {
+      conn.write('Move: left');
+    }
+
+    if (key === 's') {
+      conn.write('Move: down');
+    }
+    
+    if (key === 'd') {
+      conn.write('Move: right');
+    }
+
+
+
+  });
+
+
+
+
+  return stdin;
+};
+
+
+
+module.exports = {setupInput};
