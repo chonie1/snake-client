@@ -1,5 +1,6 @@
 // Stores the active TCP connection object.
 let connection;
+const constants = require('./constants');
 
 /**
  * Setup User Interface
@@ -17,19 +18,19 @@ const setupInput = function(conn) {
       process.exit();
     }
 
-    if (key === 'w') {
+    if (key === constants.MOVE_UP_KEY) {
       conn.write('Move: up');
     }
 
-    if (key === 'a') {
+    if (key === constants.MOVE_LEFT_KEY) {
       conn.write('Move: left');
     }
 
-    if (key === 's') {
+    if (key === constants.MOVE_DOWN_KEY) {
       conn.write('Move: down');
     }
     
-    if (key === 'd') {
+    if (key === constants.MOVE_RIGHT_KEY) {
       conn.write('Move: right');
     }
 
