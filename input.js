@@ -33,6 +33,9 @@ const setupInput = function(conn) {
       conn.write('Move: right');
     }
 
+    if (key === 'm') {
+      conn.write('Say: I love food!');
+    }
 
 
   });
